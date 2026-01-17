@@ -1,0 +1,101 @@
+:root{
+  --bg:#0b0c0d;
+  --bg2:#141618;
+  --txt:#e8e8e8;
+  --green:#2bbf6a;   /* freyna.org green */
+  --neon:#39ff14;
+}
+
+@font-face{
+  font-family: "Comfortaa";
+  src: url("Comfortaa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: Tahoma, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+}
+
+h1, h2, .section-title{
+  font-family: "Comfortaa", Tahoma, Arial, sans-serif;
+}
+
+/* layout */
+header, footer{
+  padding:.75rem;
+  text-align:center;
+  background:var(--bg2);
+}
+main{ padding:.75rem; }
+h1, h2{ margin:.2rem 0 .5rem 0; }
+
+/* mobile-first link cluster */
+.linkbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  padding:.5rem;
+  background:var(--bg2);
+}
+
+/* pill links */
+a.pill{
+  display:inline-block;
+  padding:.35rem .6rem;
+  background:var(--green);
+  color:#000;
+  border-radius:999px;
+  text-decoration:none;
+  line-height:1.2;
+  border:1px solid rgba(0,0,0,.35);
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+
+a.pill:hover{ filter:blur(.35px); }
+a.pill:active{ background:var(--neon); filter:none; }
+a.pill.is-current{ background:var(--neon); filter:none; }
+a.pill:focus-visible{ outline:2px solid var(--neon); outline-offset:2px; }
+
+/* content */
+.content{
+  max-width:900px;
+  margin:0 auto;
+  line-height:1.5;
+}
+.modules{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.modules li{
+  padding:.5rem .6rem;
+  margin:.35rem 0;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+}
+
+/* scrollbar */
+/* Firefox */
+*{
+  scrollbar-width:auto;
+  scrollbar-color:var(--green) var(--bg2);
+}
+
+/* Chrome / Edge */
+::-webkit-scrollbar{ width:18px; height:18px; }
+::-webkit-scrollbar-track{ background:var(--bg2); }
+::-webkit-scrollbar-thumb{
+  background:var(--green);
+  border-radius:999px;
+  border:3px solid var(--bg2);
+}
+::-webkit-scrollbar-thumb:hover{ background:var(--neon); }
