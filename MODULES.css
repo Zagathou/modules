@@ -1,12 +1,13 @@
-:root{
-  --bg:#0b0c0d;
-  --bg2:#141618;
-  --txt:#e8e8e8;
-  --green:#2bbf6a;   /* freyna.org green */
-  --neon:#39ff14;
+:root {
+  --bg: #0b0c0d;
+  --bg2: #141618;
+  --txt: #e8e8e8;
+  --green: #03ff36; /* Dein Freyna-Grün */
+  --neon: #39ff14; /* Für den Glow-Effekt */
 }
 
-@font-face{
+/* SCHRIFTART WIEDER DABEI */
+@font-face {
   font-family: "Comfortaa";
   src: url("Comfortaa.ttf") format("truetype");
   font-weight: normal;
@@ -14,88 +15,80 @@
   font-display: swap;
 }
 
-html, body{ height:100%; }
+html, body { height: 100%; }
 
-body{
-  margin:0;
+body {
+  margin: 0;
   font-family: Tahoma, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--txt);
+  background: var(--bg);
+  color: var(--txt);
 }
 
-h1, h2, .section-title{
+/* Comfortaa für alle Überschriften und Titel */
+h1, h2, .section-title, a.pill {
   font-family: "Comfortaa", Tahoma, Arial, sans-serif;
 }
 
-/* layout */
-header, footer{
-  padding:.75rem;
-  text-align:center;
-  background:var(--bg2);
-}
-main{ padding:.75rem; }
-h1, h2{ margin:.2rem 0 .5rem 0; }
-
-/* mobile-first link cluster */
-.linkbar{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.4rem;
-  padding:.5rem;
-  background:var(--bg2);
+/* --- ANTI-BLAU SCHUTZ FÜR TEXTLINKS --- */
+a, a:link, a:visited {
+  color: var(--green) !important;
+  text-decoration: none !important;
 }
 
-/* pill links */
-a.pill{
-  display:inline-block;
-  padding:.35rem .6rem;
-  background:var(--green);
-  color:#000;
-  border-radius:999px;
-  text-decoration:none;
-  line-height:1.2;
-  border:1px solid rgba(0,0,0,.35);
-  user-select:none;
-  -webkit-tap-highlight-color:transparent;
+a:hover {
+  color: var(--neon) !important;
 }
 
-a.pill:hover{ filter:blur(.35px); }
-a.pill:active{ background:var(--neon); filter:none; }
-a.pill.is-current{ background:var(--neon); filter:none; }
-a.pill:focus-visible{ outline:2px solid var(--neon); outline-offset:2px; }
+/* --- PILL-STYLE: GEFÜLLT MIT GLOW (COMFORTAA) --- */
 
-/* content */
-.content{
-  max-width:900px;
-  margin:0 auto;
-  line-height:1.5;
-}
-.modules{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-.modules li{
-  padding:.5rem .6rem;
-  margin:.35rem 0;
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:12px;
+a.pill {
+  position: relative;
+  display: inline-block;
+  padding: .4rem .85rem;
+  background: transparent;
+  color: var(--green) !important;
+  border-radius: 999px;
+  border: 1px solid var(--green);
+  text-decoration: none !important;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
 
-/* scrollbar */
-/* Firefox */
-*{
-  scrollbar-width:auto;
-  scrollbar-color:var(--green) var(--bg2);
+/* Der aktive Zustand (is-current) */
+a.pill.is-current {
+  background: var(--green);
+  color: #000 !important;
+  border-color: var(--green);
+  box-shadow: 0 0 15px rgba(3, 255, 54, 0.6), 
+              0 0 30px rgba(3, 255, 54, 0.2);
+  font-weight: lighter; /* Schön schlank wie im Screenshot */
 }
 
-/* Chrome / Edge */
-::-webkit-scrollbar{ width:18px; height:18px; }
-::-webkit-scrollbar-track{ background:var(--bg2); }
-::-webkit-scrollbar-thumb{
-  background:var(--green);
-  border-radius:999px;
-  border:3px solid var(--bg2);
+/* Hover Effekt für inaktive Buttons */
+a.pill:hover:not(.is-current) {
+  background: rgba(3, 255, 54, 0.1);
+  box-shadow: 0 0 10px rgba(3, 255, 54, 0.3);
 }
-::-webkit-scrollbar-thumb:hover{ background:var(--neon); }
+
+/* --- RESTLICHE LAYOUT STYLES --- */
+header, footer { padding: .75rem; text-align: center; background: var(--bg2); }
+.linkbar { display: flex; flex-wrap: wrap; gap: .8rem; padding: 1rem; background: var(--bg2); }
+.content { max-width: 900px; margin: 0 auto; line-height: 1.5; }
+
+.modules li {
+  padding: .5rem .6rem;
+  margin: .35rem 0;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 12px;
+}
+
+/* Scrollbar */
+* { scrollbar-width: auto; scrollbar-color: var(--green) var(--bg2); }
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 999px;
+  border: 3px solid var(--bg2);
+}
