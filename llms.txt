@@ -1036,7 +1036,7 @@ Note: some chance values (Multi-Hit Chance, Additional Attack Chance) appear in 
 ## TFD Pages
 - Freyna.ORG: https://freyna.org/
 - Modules: https://modules.freyna.org/
-- Weapons: https://zagathou.github.io/weapons/
+- Weapons: https://weapons.freyna.org/
 - descendant.gg: https://descendant.gg/
 
 These webpages are optimized for Non-Agentic Artificial Intelligence and easy to read.
