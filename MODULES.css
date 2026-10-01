@@ -110,3 +110,10 @@ header, footer { padding: .75rem; text-align: center; background: var(--bg2); }
 .tfd-pages ul{ list-style:none; margin:0 0 10px; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:6px 14px; }
 .tfd-footer a{ color:var(--tfd-accent, #03ff36); }
 @media (max-width:600px){ .tfd-contact dl{ grid-template-columns:1fr; } .tfd-contact dd{ margin-bottom:6px; } }
+
+/* Module count table (index) */
+.table-wrap{ overflow-x:auto; max-width:520px; }
+table.counts{ width:100%; border-collapse:collapse; margin:.5rem 0 0; }
+table.counts th, table.counts td{ border:1px solid rgba(3,255,54,0.45); padding:.35rem .6rem; text-align:left; }
+table.counts thead th{ color:var(--green); background:rgba(3,255,54,0.08); }
+table.counts td:last-child{ text-align:right; }
